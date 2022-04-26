@@ -1,0 +1,21 @@
+.ferry-terminal mat-card-content {
+  background-image: url("../../../../assets/img/ferry.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  rotate: 180deg;
+  height: 170px !important;
+
+  div {
+    max-width: 360px !important;
+  }
+}
+
+.small-vehicle {
+  width: 80px !important;
+}
+
+.large-vehicle {
+  width: 126px !important;
+}

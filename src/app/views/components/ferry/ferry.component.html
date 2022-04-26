@@ -1,0 +1,22 @@
+<mat-card class="ferry-terminal" [id]="'ferry-terminal'+ferry?.size">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ferry?.size}} Ferry</mat-card-title>
+    <mat-card-subtitle>capacity {{ferry?.capacity}} Vehicles</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row pt-4" [ngClass]="colStyle">
+      <div class="col-6 float-end" *ngFor="let vh of ferry.vehicles">
+        <img [src]="'../../../../assets/img/'+vh.icon"
+             class="animate__animated animate__backInLeft"
+             [ngClass]="ferry.size=='small'?'small-vehicle':'large-vehicle'"
+             alt="">
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="btn w-100" [ngClass]="ferry.capacity==ferry?.vehicles?.length?'btn-danger':'btn-outline-danger'"
+            [disabled]="ferry.capacity!==ferry?.vehicles?.length"
+            (click)="sendFerry()">Send Ferry</button>
+  </mat-card-actions>
+</mat-card>
